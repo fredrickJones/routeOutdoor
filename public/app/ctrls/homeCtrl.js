@@ -51,7 +51,7 @@ app.controller('homeCtrl', function($scope, loginService, locationService, selec
 			latitude: center.latitude,
 			longitude: center.longitude
 		},
-		url: 'images/user-marker.png'
+		url: 'imgs/user-marker.png'
 	};
 
 	$scope.userTitle = $scope.userPin.coords.latitude.toFixed(6) + ', ' + $scope.userPin.coords.longitude.toFixed(6);

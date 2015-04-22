@@ -27,7 +27,7 @@ app.service('campService', function($q, $http, locationService) {
 					this.trailHead = trailHead;
 					this.url = url;
 				};
-				var url = 'images/location-marker.png';
+				var url = 'imgs/location-marker.png';
 				for (var i = 0; i < markerData.length; i++) {
 					var siteMarker = new NewMarker(
 						markerData[i].name,

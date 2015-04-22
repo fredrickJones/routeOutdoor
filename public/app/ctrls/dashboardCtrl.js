@@ -10,12 +10,12 @@ app.controller('dashboardCtrl', function($scope, uiGmapGoogleMapApi, rockService
 			rockService.addCrag(cragData);
 		} else {
 			$scope.crag_form.submitted = true;
-			// $scope.crag.name = '';
-			// $scope.crag.loc[1] = '';
-			// $scope.crag.loc[0] = '';
-			// $scope.crag.trailHead = '';
-			// $scope.crag.difficult = '';
 		}
+		// $scope.crag.name = '';
+		// $scope.crag.lat = '';
+		// $scope.crag.lon = '';
+		// $scope.crag.trailHead = '';
+		// $scope.crag.difficult = '';
 	};
 
 	$scope.addNewSite = function(siteData) {

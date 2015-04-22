@@ -26,7 +26,7 @@ app.service('hikeService', function($q, $http, locationService) {
 					this.length = length;
 					this.url = url;
 				};
-				var url = 'images/location-marker.png';
+				var url = 'imgs/location-marker.png';
 				for (var i = 0; i < markerData.length; i++) {
 					var siteMarker = new NewMarker(
 						markerData[i].name,
