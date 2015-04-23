@@ -1,5 +1,16 @@
 body {
-	padding-top: 81px;
+	padding-top: 51px;
+	background-color: rgba(67, 79, 91, 1);
+	color: rgba(173, 201, 143, 1);
+}
+@media(min-width:768px) {
+	body {
+		padding-top: 81px;
+	}
+
+	.navbar-fixed-top .navbar-brand {
+		padding: 15px 0;
+	}
 }
 
 .navbar {
@@ -11,13 +22,25 @@ body {
 	margin-bottom: 0px;
 	z-index: 200;
 }
+.navbar-inverse {
+	background-color: rgb(123, 131, 144);
+	border-color: rgb(175, 183, 185);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: rgba(52, 59, 25, 1);
+}
 
 .required {
-	color: rgba(126, 0, 189, 1);
+	color: rgba(144, 36, 40, 1);
 }
 
 .login-btn {
 	padding-bottom: 20px;
+}
+
+.modal {
+	color: rgba(67, 79, 91, 1);
 }
 
 /*-- MAP STUFF --*/
