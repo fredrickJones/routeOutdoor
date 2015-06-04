@@ -5,7 +5,7 @@ app.controller('homeCtrl', function($scope, loginService, locationService, selec
 
 // MARKER STUFF
 	$scope.adventures = [];
-	// console.log($scope.adventures);
+	console.log($scope.adventures);
 
 	$scope.windowOptions = {
 		show: false
@@ -17,7 +17,7 @@ app.controller('homeCtrl', function($scope, loginService, locationService, selec
 		$scope.windowOptions.show = false;
 	};
 
-	$scope.title = $scope.adventures.name;
+	$scope.markerTitle = $scope.adventures.name;
 
 	$scope.$on('updateSelection', function() {
 		var selection = selectionService.getSelection();
@@ -61,18 +61,18 @@ app.controller('homeCtrl', function($scope, loginService, locationService, selec
 	$scope.map = {
 		center: center,
 		zoom: 10,
-		bounds: {}
-	};
-	$scope.map.option = {
-		scrollwheel: false,
-		mapTypeControlOptions: {
-			mapTypeIds: [google.maps.MapTypeId.TERRAIN]
-		},
-		disableDefaultUI: true,
-		mapTypeId: google.maps.MapTypeId.TERRAIN,
-		zoomControl: true,
-		zoomControlOptions: {
-			style: 'SMALL'
+		bounds: {},
+		options: {
+			scrollwheel: false,
+			mapTypeControlOptions: {
+				mapTypeIds: [google.maps.MapTypeId.TERRAIN]
+			},
+			disableDefaultUI: true,
+			mapTypeId: google.maps.MapTypeId.TERRAIN,
+			zoomControl: true,
+			zoomControlOptions: {
+				style: 'SMALL'
+			}
 		}
 	};
 	$scope.$watch(function() {

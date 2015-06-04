@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('routeOutdoor', ['ngRoute', 'uiGmapgoogle-maps']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: './app/views/homeView.html',

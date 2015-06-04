@@ -8,23 +8,40 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Route Outdoor | Finding Your Route</title>
+	<title>Routed | Finding Your Route</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-
 	<!-- Custom CSS -->
 	<link href="css/the-big-picture.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/simplex.css">
 	<link rel="stylesheet" href="/css/style.css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 
+	<!-- angular -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-route.js"></script>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+	<!-- maps -->
+	<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+	<!-- app -->
+	<script src="/app/app.js"></script>
+	<!-- controllers -->
+	<script src="/app/ctrls/mainCtrl.js"></script>
+	<script src="/app/ctrls/homeCtrl.js"></script>
+	<script src="/app/ctrls/dashboardCtrl.js"></script>
+	<!-- services -->
+	<script src="/app/services/dashboardService.js"></script>
+	<script src="/app/services/locationService.js"></script>
+	<script src="/app/services/loginService.js"></script>
+	<script src="/app/services/rockService.js"></script>
+	<script src="/app/services/campService.js"></script>
+	<script src="/app/services/hikeService.js"></script>
+	<script src="/app/services/selectionService.js"></script>
 </head>
 
 <body ng-app="routeOutdoor" ng-controller="mainCtrl">
@@ -101,37 +118,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- angular -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-route.js"></script>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-	<!-- maps -->
-	<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-
-	<!-- app -->
-	<script src="/app/app.js"></script>
-
-	<!-- controllers -->
-	<script src="/app/ctrls/mainCtrl.js"></script>
-	<script src="/app/ctrls/homeCtrl.js"></script>
-	<script src="/app/ctrls/dashboardCtrl.js"></script>
-
-	<!-- services -->
-	<script src="/app/services/dashboardService.js"></script>
-	<script src="/app/services/locationService.js"></script>
-	<script src="/app/services/loginService.js"></script>
-	<script src="/app/services/rockService.js"></script>
-	<script src="/app/services/campService.js"></script>
-	<script src="/app/services/hikeService.js"></script>
-	<script src="/app/services/selectionService.js"></script>
-
 </body>
 
 </html>

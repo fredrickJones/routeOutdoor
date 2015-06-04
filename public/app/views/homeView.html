@@ -4,22 +4,20 @@
 			center="map.center"
 			zoom="map.zoom"
 			draggable="true"
-			options="map.option"
+			options="map.options"
 			bounds="map.bounds">
 				<ui-gmap-markers
 					models="adventures"
-					
+					coords="'coords'"
 					idKey="id"
+					icon="'url'"
 					doCluster="true"
 					clusterOptions="cluster"
-					
-					coords="'coords'"
-					icon="'url'"
-					click="onClick">
+					click="onClick(adventures.name)">
 						<ui-gmap-windows
 							options="'windowOptions'"
-							closeClick="closeClick">
-								{{title}}
+							closeClick="closeClick()">
+								<div>{{markerTitle}}</div>
 						</ui-gmap-windows>
 				</ui-gmap-markers>
 				<ui-gmap-marker

@@ -4,8 +4,8 @@ var Express = require('express'),
 	BodyParser = require('body-parser'),
 	Passport = require('passport'),
 	FacebookStrategy = require('passport-facebook').Strategy,
-	InstagramStrategy = require('passport-instagram').Strategy,
-	TwitterStrategy = require('passport-twitter').Strategy,
+	// InstagramStrategy = require('passport-instagram').Strategy,
+	// TwitterStrategy = require('passport-twitter').Strategy,
 	Mongoose = require('mongoose');
 
 var env = require('./serverAssets/env'),
@@ -47,47 +47,47 @@ app.get('/auth/facebook', Passport.authenticate('facebook'), function(req, res) 
 	return res.status(200).end();
 });
 app.get('/auth/facebook/callback', Passport.authenticate('facebook', {
-	successRedirect: '/#/dashboard',	// <--Successful authentication, redirect to dashboard.
+	successRedirect: '/dashboard',	// <--Successful authentication, redirect to dashboard.
 	failureRedirect: '/'
 }));
 
 	// INSTAGRAM
-Passport.use(new InstagramStrategy({
-	clientID: process.env.INSTAGRAM_ID || env.INSTAGRAM.CLIENT_ID,
-	clientSecret: process.env.INSTAGRAM_SECRET || env.INSTAGRAM.CLIENT_SECRET,
-	callbackURL: process.env.INSTAGRAM_CB || "http://127.0.0.1:9099/auth/instagram/callback"
-	}, function(accessToken, refreshToken, profile, done) {
-		userControl.updateOrCreate(profile).then(function(results) {
-			done(null, profile);
-		}, function(err) {
-			done(err, profile);
-		}
-	);
-}));
-app.get('/auth/instagram', Passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', Passport.authenticate('instagram', {
-	successRedirect: '/#/dashboard',	// <--Successful authentication, redirect to dashboard.
-	failureRedirect: '/'
-}));
+// Passport.use(new InstagramStrategy({
+// 	clientID: process.env.INSTAGRAM_ID || env.INSTAGRAM.CLIENT_ID,
+// 	clientSecret: process.env.INSTAGRAM_SECRET || env.INSTAGRAM.CLIENT_SECRET,
+// 	callbackURL: process.env.INSTAGRAM_CB || "http://127.0.0.1:9099/auth/instagram/callback"
+// 	}, function(accessToken, refreshToken, profile, done) {
+// 		userControl.updateOrCreate(profile).then(function(results) {
+// 			done(null, profile);
+// 		}, function(err) {
+// 			done(err, profile);
+// 		}
+// 	);
+// }));
+// app.get('/auth/instagram', Passport.authenticate('instagram'));
+// app.get('/auth/instagram/callback', Passport.authenticate('instagram', {
+// 	successRedirect: '/dashboard',	// <--Successful authentication, redirect to dashboard.
+// 	failureRedirect: '/'
+// }));
 
 	// TWITTER
-Passport.use(new TwitterStrategy({
-	consumerKey: process.env.TWITTER_KEY || env.TWITTER.CONSUMER_KEY,
-	consumerSecret: process.env.TWITTER_SECRET || env.TWITTER.CONSUMER_SECRET,
-	callbackURL: "http://127.0.0.1:9099/auth/twitter/callback"
-	}, function(token, tokenSecret, profile, done) {
-		User.findOrCreate(profile).then(function(results) {
-			console.log(results);
-			done(null, profile);
-		}, function(err) {
-			done(err, profile);
-	});
-}));
-app.get('/auth/twitter', Passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', Passport.authenticate('twitter', {
-	successRedirect: '/#/dashboard',	// <--Successful authentication, redirect to dashboard.
-	failureRedirect: '/'
-}));
+// Passport.use(new TwitterStrategy({
+// 	consumerKey: process.env.TWITTER_KEY || env.TWITTER.CONSUMER_KEY,
+// 	consumerSecret: process.env.TWITTER_SECRET || env.TWITTER.CONSUMER_SECRET,
+// 	callbackURL: "http://127.0.0.1:9099/auth/twitter/callback"
+// 	}, function(token, tokenSecret, profile, done) {
+// 		User.findOrCreate(profile).then(function(results) {
+// 			console.log(results);
+// 			done(null, profile);
+// 		}, function(err) {
+// 			done(err, profile);
+// 	});
+// }));
+// app.get('/auth/twitter', Passport.authenticate('twitter'));
+// app.get('/auth/twitter/callback', Passport.authenticate('twitter', {
+// 	successRedirect: '/dashboard',	// <--Successful authentication, redirect to dashboard.
+// 	failureRedirect: '/'
+// }));
 
 
 // PASSPORT
